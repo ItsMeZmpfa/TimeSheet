@@ -3,8 +3,7 @@
 namespace app\Domain\User\Interface;
 
 
-use app\Models\PasswordValueObject;
-use Illuminate\Support\Collection;
+use App\Helper\PasswordValueObject;
 
 interface UserRepository
 {

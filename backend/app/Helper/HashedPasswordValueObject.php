@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Helper;
 
 use Illuminate\Support\Facades\Hash;
 

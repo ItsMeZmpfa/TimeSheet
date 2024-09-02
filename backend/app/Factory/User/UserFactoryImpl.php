@@ -5,8 +5,8 @@ namespace App\Factory\User;
 
 use App\Domain\User\Interface\UserEntity;
 use App\Domain\User\Interface\UserFactory;
-use App\Models\EmailValueObject;
-use App\Models\PasswordValueObject;
+use App\Helper\EmailValueObject;
+use App\Helper\PasswordValueObject;
 use App\Models\User;
 
 class UserFactoryImpl implements UserFactory

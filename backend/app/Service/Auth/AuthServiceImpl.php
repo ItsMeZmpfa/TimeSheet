@@ -7,7 +7,7 @@ use App\Domain\Auth\Interface\AuthService;
 use App\Domain\User\Interface\UserFactory;
 use App\Domain\User\Interface\UserRepository;
 use App\Domain\ViewModel;
-use App\Models\PasswordValueObject;
+use App\Helper\PasswordValueObject;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 

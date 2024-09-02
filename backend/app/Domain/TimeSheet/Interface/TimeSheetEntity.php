@@ -2,8 +2,7 @@
 
 namespace App\Domain\TimeSheet\Interface;
 
-use App\Models\DateValueObject;
-use DateTimeInterface;
+use App\Helper\DateValueObject;
 
 interface TimeSheetEntity
 {

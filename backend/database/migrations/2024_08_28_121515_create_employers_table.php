@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('employers', function (Blueprint $table) {
             $table->id();
+            $table->string('employerName')->unique();
             $table->string('employerCode')->unique();
-            $table->float('allow');
             $table->timestamps();
         });
 

@@ -2,7 +2,7 @@
 
 namespace App\Domain\TimeLog\Interface;
 
-use App\Models\DateValueObject;
+use App\Helper\DateValueObject;
 
 interface TimeLogEntity
 {

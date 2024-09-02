@@ -13,4 +13,6 @@ Route::post('/login',  [Controllers\Api\Auth\ApiLoginController::class,'__invoke
 Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::post('/logout',
         Controllers\Api\Auth\ApiLogoutController::class)->name('logout');
+    Route::post('/createdEmployer',
+        Controllers\Api\Employer\ApiCreatedEmployerController::class)->name('createdEmployer');
 });

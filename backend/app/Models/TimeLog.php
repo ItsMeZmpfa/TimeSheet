@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Domain\TimeLog\Interface\TimeLogEntity;
+use App\Helper\DateValueObject;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 

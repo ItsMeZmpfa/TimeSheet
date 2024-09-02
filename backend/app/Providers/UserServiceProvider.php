@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Adapter;
+use App\Adapters;
 use App\Domain;
 use App\Factory;
 use App\Models\User;

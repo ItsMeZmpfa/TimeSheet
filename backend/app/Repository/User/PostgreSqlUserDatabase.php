@@ -4,7 +4,7 @@ namespace App\Repository\User;
 
 use App\Domain\User\Interface\UserEntity;
 use App\Domain\User\Interface\UserRepository;
-use App\Models\PasswordValueObject;
+use App\Helper\PasswordValueObject;
 use App\Models\User;
 
 class PostgreSqlUserDatabase implements UserRepository

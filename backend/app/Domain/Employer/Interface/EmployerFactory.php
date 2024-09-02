@@ -7,8 +7,9 @@ interface EmployerFactory
 
     /**
      * Create a Factory object for to create Employer
+     * @param  array  $attributes
      * @return EmployerEntity
      */
-    public function createEmployer(): EmployerEntity;
+    public function createEmployer(array $attributes = []): EmployerEntity;
 
 }

@@ -4,9 +4,9 @@ namespace App\Domain\User\Interface;
 
 
 use App\Domain\Roles\Enum\RoleName\RoleNameEnum;
-use App\Models\EmailValueObject;
-use App\Models\HashedPasswordValueObject;
-use App\Models\PasswordValueObject;
+use App\Helper\EmailValueObject;
+use App\Helper\HashedPasswordValueObject;
+use App\Helper\PasswordValueObject;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 interface UserEntity
