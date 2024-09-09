@@ -6,6 +6,7 @@ use App\Domain\TimeSheet\Interface\TimeSheetEntity;
 use App\Helper\DateValueObject;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class TimeSheet extends Model implements TimeSheetEntity
 {
@@ -19,6 +20,7 @@ class TimeSheet extends Model implements TimeSheetEntity
     protected $fillable = [
         'id',
         'employerId',
+        'timeLogId',
         'startDate',
         'endDate',
         'submitStatus',
@@ -62,7 +64,7 @@ class TimeSheet extends Model implements TimeSheetEntity
      */
     public function setStartDate(DateValueObject $date): void
     {
-         $this->attributes['startDate'] = $date;
+        $this->attributes['startDate'] = $date;
     }
 
     /**
@@ -86,7 +88,7 @@ class TimeSheet extends Model implements TimeSheetEntity
      */
     public function getSubmitStatus(): bool
     {
-       return $this->attributes['submitStatus'];
+        return $this->attributes['submitStatus'];
     }
 
     /**
@@ -112,4 +114,25 @@ class TimeSheet extends Model implements TimeSheetEntity
     {
         $this->attributes['approvedStatus'] = $status;
     }
+
+    /**
+     * @inheritDoc
+     */
+    public function getTimeLogId(): int
+    {
+        return $this->attributes['timeLogId'] ?? '';
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function setTimeLogId(int $id): void
+    {
+        $this->attributes['timeLogId'] = $id;
+    }
+
+    /**
+     * @inheritDoc
+     */
+
 }

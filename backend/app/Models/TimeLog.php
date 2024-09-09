@@ -6,6 +6,7 @@ use App\Domain\TimeLog\Interface\TimeLogEntity;
 use App\Helper\DateValueObject;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class TimeLog extends Model implements TimeLogEntity
 {
@@ -19,10 +20,9 @@ class TimeLog extends Model implements TimeLogEntity
     protected $fillable = [
         'id',
         'employerId',
-        'timesheetId',
         'date',
-        'startTime',
-        'endTime',
+        'start',
+        'end',
         'duration',
     ];
 
@@ -87,7 +87,7 @@ class TimeLog extends Model implements TimeLogEntity
      */
     public function getStartTime(): DateValueObject
     {
-        return new DateValueObject($this->attributes['startTime']);
+        return new DateValueObject($this->attributes['start']);
     }
 
     /**
@@ -95,7 +95,7 @@ class TimeLog extends Model implements TimeLogEntity
      */
     public function setStartTime(DateValueObject $startTime): void
     {
-        $this->attributes['startTime'] = $startTime;
+        $this->attributes['start'] = $startTime;
     }
 
     /**
@@ -103,7 +103,7 @@ class TimeLog extends Model implements TimeLogEntity
      */
     public function getEndTime(): DateValueObject
     {
-        return new DateValueObject($this->attributes['endTime']);
+        return new DateValueObject($this->attributes['end']);
     }
 
     /**
@@ -111,7 +111,7 @@ class TimeLog extends Model implements TimeLogEntity
      */
     public function setEndTime(DateValueObject $endTime): void
     {
-        $this->attributes['endTime'] = $endTime;
+        $this->attributes['end'] = $endTime;
     }
 
     /**
@@ -128,5 +128,13 @@ class TimeLog extends Model implements TimeLogEntity
     public function setDuration(int $duration): void
     {
         $this->attributes['duration'] = $duration;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function employers(): HasOne
+    {
+        return $this->hasOne(Employer::class);
     }
 }

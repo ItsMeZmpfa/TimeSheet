@@ -11,4 +11,10 @@ interface TimeLogOutputPort
      * @return ViewModel
      */
     public function timeLogCreated(): ViewModel;
+
+    /**
+     *
+     * @return ViewModel
+     */
+    public function timeLogNotCreated(): ViewModel;
 }

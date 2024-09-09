@@ -11,7 +11,7 @@ class DateValueObject
     public function __construct(string $date)
     {
 
-        $this->date = Carbon::createFromFormat('Y-m-d H:i:s', $date);
+        $this->date = Carbon::createFromFormat('Y-m-d H:i:s', $date)->setTimezone('Europe/Berlin');
 
     }
 
@@ -28,5 +28,25 @@ class DateValueObject
     public function toString(): string
     {
         return $this->date->toDateTimeString();
+    }
+
+    public function getDate(): string
+    {
+        return $this->date->toDateTimeString();
+    }
+
+    public function getTime(): string
+    {
+        return $this->date->toTimeString();
+    }
+
+    public function getTimeDiffInHour(DateValueObject $dateToDiff): string
+    {
+        return $this->date->diffInHours($dateToDiff->getDate());
+    }
+
+    public function getDateObject()
+    {
+        return $this->date;
     }
 }

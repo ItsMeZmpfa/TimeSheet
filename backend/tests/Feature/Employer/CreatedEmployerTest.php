@@ -13,12 +13,16 @@ class CreatedEmployerTest extends TestCase
     use RefreshDatabase;
 
     private User $user;
+
     #[Test]
     public function createdEmployerTest(): void
     {
         $response = $this->actingAs($this->user, 'sanctum')->postJson(route('createdEmployer',
             ['employerName' => 'Test Test']))->assertStatus(201);
 
+        $response->assertJsonFragment([
+            'message' => 'Employer created successfully',
+        ]);
 
         $this->assertDatabaseHas('employers', ['employerName' => 'Test Test']);
 

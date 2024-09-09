@@ -13,7 +13,7 @@ class EmployerFactory extends Factory
     public function definition()
     {
         return [
-            'name' => fake()->name(),
+            'employerName' => fake()->name(),
             'employerCode' => fake()->numerify('#####'),
         ];
     }

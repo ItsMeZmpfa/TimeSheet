@@ -15,4 +15,7 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
         Controllers\Api\Auth\ApiLogoutController::class)->name('logout');
     Route::post('/createdEmployer',
         Controllers\Api\Employer\ApiCreatedEmployerController::class)->name('createdEmployer');
+    Route::post('/createdTimeLog',
+        Controllers\Api\TimeLog\ApiCreatedTimeLogController::class)->name('createdTimeLog');
+
 });

@@ -3,6 +3,7 @@
 namespace App\Domain\TimeLog\Interface;
 
 use App\Helper\DateValueObject;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 interface TimeLogEntity
 {
@@ -90,5 +91,11 @@ interface TimeLogEntity
      * @return void
      */
     public function setDuration(int $duration): void;
+
+    /**
+     * Relation of Employer
+     * @return HasOne
+     */
+    public function employers(): HasOne;
 
 }

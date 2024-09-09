@@ -6,7 +6,6 @@ use Illuminate\Support\ServiceProvider;
 use App\Adapters;
 use App\Domain;
 use App\Factory;
-use App\Models\Employer;
 use App\Repository;
 use App\Service;
 

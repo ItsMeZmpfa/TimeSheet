@@ -12,4 +12,11 @@ interface TimeSheetRepository
      * @return TimeSheetEntity
      */
     public function createTimeSheet(TimeSheetEntity $timeSheet): TimeSheetEntity;
+
+    /**
+     * Check if the Record exits in The Database
+     * @param  TimeSheetEntity  $timeSheetEntity
+     * @return bool
+     */
+    public function checkIfTimeSheetExists(TimeSheetEntity $timeSheetEntity): bool;
 }

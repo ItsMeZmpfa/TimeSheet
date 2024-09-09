@@ -3,6 +3,7 @@
 namespace App\Domain\TimeSheet\Interface;
 
 use App\Helper\DateValueObject;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 interface TimeSheetEntity
 {
@@ -25,6 +26,19 @@ interface TimeSheetEntity
      * @return void
      */
     public function setEmployerId(int $id): void;
+
+    /**
+     * Get The iD of the Relation of TimeLog
+     * @return int
+     */
+    public function getTimeLogId(): int;
+
+    /**
+     * Set the iD of the Relation of TimeLog
+     * @param  int  $id
+     * @return void
+     */
+    public function setTimeLogId(int $id): void;
 
     /**
      * Get The Start Date of TimeSheetEntity
@@ -69,7 +83,7 @@ interface TimeSheetEntity
      * Get The Status of Approved on TimeSheetEntity
      * @return bool
      */
-    public function getApprovedStatus(): Boolean;
+    public function getApprovedStatus(): bool;
 
     /**
      * Set The Status Approved on TimeSheetEntity
@@ -77,4 +91,6 @@ interface TimeSheetEntity
      * @return void
      */
     public function setApprovedStatus(bool $status): void;
+
+
 }
