@@ -1,11 +1,16 @@
 <script>
+import Navigation from "@/components/Navigation/Navigation.vue";
+
 export default {
-  name: "Home"
+  name: "Home",
+  components: {Navigation}
 }
 </script>
 
 <template>
-  <p>Welcome</p>
+  <v-app>
+    <Navigation/>
+  </v-app>
 </template>
 
 <style scoped>

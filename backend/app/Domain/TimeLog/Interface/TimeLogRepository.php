@@ -2,6 +2,8 @@
 
 namespace App\Domain\TimeLog\Interface;
 
+use Illuminate\Support\Collection;
+
 interface TimeLogRepository
 {
 
@@ -18,4 +20,11 @@ interface TimeLogRepository
      * @return bool
      */
     public function checkIfThereIsATimeLog(TimeLogEntity $timeLog): bool;
+
+    /**
+     * Get The Latest Record Collection of The TimeLog Base On Date
+     * @param  TimeLogEntity  $timeLog
+     * @return Collection
+     */
+    public function getLatestTimeLogBaseOnMonth(array $dateRange): Collection;
 }

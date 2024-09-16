@@ -17,4 +17,10 @@ interface TimeLogOutputPort
      * @return ViewModel
      */
     public function timeLogNotCreated(): ViewModel;
+
+    /**
+     * @param $collection
+     * @return ViewModel
+     */
+    public function getTimeRecord($collection): ViewModel;
 }

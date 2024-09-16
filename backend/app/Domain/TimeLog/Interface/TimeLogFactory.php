@@ -10,5 +10,10 @@ interface TimeLogFactory
      * @param  array  $attributes
      * @return TimeLogEntity
      */
-    public function createTimeLog(array $attributes = []):TimeLogEntity;
+    public function createTimeLog(array $attributes = []): TimeLogEntity;
+
+    /**
+     * @return array
+     */
+    public function retrieveTimeLogRecordBaseOnDate(): array;
 }

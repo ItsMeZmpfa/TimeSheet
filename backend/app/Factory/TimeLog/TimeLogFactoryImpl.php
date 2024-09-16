@@ -31,4 +31,20 @@ class TimeLogFactoryImpl implements TimeLogFactory
 
         return new TimeLog($attributes);
     }
+
+    /**
+     * @inheritDoc
+     */
+    public function retrieveTimeLogRecordBaseOnDate(array $attributes = []): array
+    {
+        if (isset($attributes['startDate']) && is_string($attributes['startDate'])) {
+            $attributes['startDate'] = new DateValueObject($attributes['startDate']);
+        }
+
+        if (isset($attributes['endDate']) && is_string($attributes['endDate'])) {
+            $attributes['endDate'] = new DateValueObject($attributes['endDate']);
+        }
+
+        return $attributes;
+    }
 }

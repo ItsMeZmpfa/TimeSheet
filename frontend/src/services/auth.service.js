@@ -8,6 +8,7 @@ class AuthService {
             "email": user.email,
             "password": user.password
         }).then(response => {
+
             if (response.data.token) {
                 localStorage.setItem('SECURITY_TOKEN', JSON.stringify(response.data.token));
             }
@@ -17,7 +18,7 @@ class AuthService {
     logout() {
         localStorage.removeItem('user');
     }
-    
+
 }
 
 export default new AuthService();

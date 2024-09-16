@@ -14,7 +14,7 @@ return new class extends Migration {
             $table->id();
             $table->bigInteger('employerId')->index();
             $table->foreign('employerId')->references('id')->on('employers');
-            $table->time('date');
+            $table->date('date');
             $table->time('start');
             $table->time('end');
             $table->integer('duration');

@@ -12,7 +12,6 @@ const axiosIns = Axios.create({
     },
     withXSRFToken: true,
 
-
 });
 
 export default axiosIns;

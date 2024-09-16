@@ -7,6 +7,7 @@ use App\Domain\TimeLog\Interface\TimeLogOutputPort;
 use App\Domain\ViewModel;
 use App\Http\Resources\TimeLog\TimeLogCreatedFailResource;
 use App\Http\Resources\TimeLog\TimeLogCreatedSuccessResource;
+use App\Http\Resources\TimeLog\TimeLogRetrieveResource;
 
 class TimeLogJsonPresenter implements TimeLogOutputPort
 {
@@ -28,6 +29,16 @@ class TimeLogJsonPresenter implements TimeLogOutputPort
     {
         return new JsonResourceViewModel(
             new TimeLogCreatedFailResource()
+        );
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getTimeRecord($collection): ViewModel
+    {
+        return new JsonResourceViewModel(
+            new TimeLogRetrieveResource($collection)
         );
     }
 }

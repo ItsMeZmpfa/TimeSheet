@@ -5,6 +5,7 @@ namespace Database\Factories;
 use App\Models\Employer;
 use App\Models\TimeLog;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Carbon;
 
 class TimeLogFactory extends Factory
 {
@@ -14,9 +15,9 @@ class TimeLogFactory extends Factory
     {
         return [
             'employerId' => Employer::factory()->create()->id,
-            'date' => fake()->dateTime()->format('Y-m-d H:i:s'),
-            'start' => fake()->dateTime()->format('Y-m-d H:i:s'),
-            'end' => fake()->dateTime()->format('Y-m-d H:i:s'),
+            'date' => Carbon::parse($this->faker->dateTimeBetween('+0 days', '+1 month'))->toDateTimeString(),
+            'start' => "10:00:00",
+            'end' => "19:00:00",
             'duration' => "10",
         ];
     }

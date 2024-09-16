@@ -12,4 +12,10 @@ interface TimeLogService
      * @return ViewModel
      */
     public function createTimeLog(array $array): ViewModel;
+
+    /**
+     * @param  array  $array
+     * @return ViewModel
+     */
+    public function getLatestTimeLogRecordBaseOnDate(array $array): ViewModel;
 }
